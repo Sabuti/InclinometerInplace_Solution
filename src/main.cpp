@@ -9,7 +9,6 @@ void setup() {
   int result = 2 + 3;
   Serial.println(result);
 }
-
 void loop() {
   // put your main code here, to run repeatedly:
 }
