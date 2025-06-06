@@ -3,8 +3,8 @@
 
 #include <Wire.h>
 
-#define SCL     37
-#define SDA     21
+//#define SCL     37 // deu conflito de nome
+//#define SDA     21 // deu conflito de nome
 #define RX      5
 #define TX      4
 #define RE      3    

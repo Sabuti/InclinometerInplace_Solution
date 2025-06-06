@@ -1,9 +1,9 @@
-#include <Wire.h>
-#include <Arduino.h>
+#include "slave.h"
 
-void setup() {
+void slave_init(void) {
     Wire.begin(0x08); // como escravo com endereço 0x08
-    Wire.onReceive(receberDados); // callback para dados recebidos
+    //Wire.onReceive(receberDados); // callback para dados recebidos
+    //rever motivo do erro ao chamar a função
 }
 
 void receberDados(int qtd) {

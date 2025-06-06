@@ -1,10 +1,11 @@
 // exemplo básico
-#include <Wire.h>
-#include <Arduino.h>
+#include "master.h"
 
-int main(){
-    Wire.begin(); // como mestre
+void master_init(void){
+  Wire.begin(); // como mestre
+}
 
+void teste_master(){
   while (true){
     Wire.beginTransmission(0x08); // endereço do escravo
     Wire.write("Oi");             // envia dados
@@ -12,5 +13,3 @@ int main(){
     delay(200);
   }
 }
-
-
