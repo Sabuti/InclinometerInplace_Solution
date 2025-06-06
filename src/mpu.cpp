@@ -2,7 +2,6 @@
 
 Adafruit_MPU6050 mpu;
 
-
 void mpu_init()
 {
 
@@ -88,5 +87,4 @@ void mpu_measurements(SENSOR_CONTROL_PTR sensorControl)
   //Serial.println(sensorControl->mpu_gyro_x);
   //Serial.println(sensorControl->mpu_gyro_y);
   //Serial.println(sensorControl->mpu_gyro_z);
-  
 }

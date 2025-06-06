@@ -20,7 +20,4 @@ void calib_accel_init(SENSOR_CALIB_PTR sensorCalib, float h[3], float Ainv[3][3]
     sensorCalib->acc_x_calib = acalibrado[0];
     sensorCalib->acc_y_calib = acalibrado[1];
     sensorCalib->acc_z_calib = acalibrado[2];
-   
-    
 }
-

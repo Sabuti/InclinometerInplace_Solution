@@ -1,14 +1,15 @@
 #include <Arduino.h>
-
-// put function declarations here:
-//int myFunction(int, int);
+#include "main.h"
 
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  int result = 2 + 3;
-  Serial.println(result);
+  pins_init();
+  adxl_init();
+  //mpu_init();
+  app_init();
+  rs485_init();
+  Serial.begin(115200);
 }
+
 void loop() {
-  // put your main code here, to run repeatedly:
+  app_poll();
 }

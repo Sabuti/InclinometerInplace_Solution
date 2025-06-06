@@ -4,12 +4,9 @@
 //#include "mpu.h"
 #include "filters.h"
 
-
-
 app_state incl_state;
 SENSOR_CONTROL_T sensorControl;
 RS485_CONTROL_T rs485Control;
-
 
 void app_init()
 {
@@ -32,8 +29,7 @@ void app_poll()
         if (millis() - last_check >= 10) {  
             last_check = millis();
             
-
-            if (rs485_recvCommand(&rs485Control)) {
+            if (rs485_recvCommand(&rs485Control)) { // alterar pra ser continuo ou o master manda o S
                 
                 if (rs485Control.rs485_message[0] == 'S') {
                     Serial.println("Comando 'S' recebido!");
@@ -45,16 +41,14 @@ void app_poll()
         }
         break;
 
-
     case GET_MEASURE:
         Serial.println("Adquirindo as medidas");
         filter_apply(&filterComp, &filterButter, &filterAvg);
-        
-        
+
         measure_count++;
 
         if (measure_count >= 50) {
-            measure_count = 0;  // Agora reseta corretamente quando atinge 50!
+            measure_count = 0;  // reseta corretamente quando atinge 50
             incl_state = SEND_MEASURE;
         }
         break;
@@ -65,19 +59,12 @@ void app_poll()
         filter_apply(&filterComp, &filterButter, &filterAvg);
          
         sent_count++;
-        //float depth;
-        //depth+=L;
 
         if (sent_count == 11) {
             filter_clear(&filterComp, &filterButter, &filterAvg); 
-            
             sent_count = 0;
-           
             incl_state = WAIT_TILL_START;
-           
-            
         }
-      
         break;
 
     default:
