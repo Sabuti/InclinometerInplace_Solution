@@ -1,7 +1,7 @@
 #include "master.h"
 
 void master_init(void){
-  //Serial.begin(38400, SERIAL_8E1); // baudrate / 8 bits, paridade par, 1 stop bit
+  //Serial.begin(115200, SERIAL_8E1); // baudrate / 8 bits, paridade par, 1 stop bit
   //ModbusRTUMaster modbus(Serial, dePin); // comunicação / driver pin
   //modbus.begin(&Serial); // qual serial usada
 

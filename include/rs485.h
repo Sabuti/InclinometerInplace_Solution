@@ -7,8 +7,6 @@
 #include <SoftwareSerial.h>
 #include <Wire.h>
 
-#define RX 5
-#define TX 4
 extern SoftwareSerial mySerial;
 
 void rs485_init();

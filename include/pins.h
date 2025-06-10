@@ -5,10 +5,12 @@
 
 //#define SCL     37 // deu conflito de nome
 //#define SDA     21 // deu conflito de nome
-#define RX      5
-#define TX      4
-#define RE      3    
-#define ADO     38
+#define TX   PB3
+#define RX   PB4
+#define ADO  38
+
+const int8_t dePin = PB5; // DE igual ao do esquematico
+
 void pins_init(void);
 
 #endif
