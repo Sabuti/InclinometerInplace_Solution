@@ -6,7 +6,7 @@ void slave_init(void) {
     //rever motivo do erro ao chamar a função
 }
 
-void receberDados(int qtd) {
+void enviarDados(int qtd) {
     while(Wire.available()) {
         char c = Wire.read();
         Serial.print(c);

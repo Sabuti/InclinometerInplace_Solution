@@ -3,6 +3,7 @@
 #include "adxl.h"
 //#include "mpu.h"
 #include "filters.h"
+#include <time.h>
 
 app_state incl_state;
 SENSOR_CONTROL_T sensorControl;
@@ -12,7 +13,7 @@ void app_init()
 {
     incl_state = WAIT_TILL_START;
     filter_init(&filterComp, &filterButter, &filterAvg);
-    mpu_init();
+    //mpu_init();
     adxl_init();
 }
 

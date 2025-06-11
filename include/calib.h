@@ -1,5 +1,6 @@
 #ifndef CALIB_H_
 #define CALIB_H_
+
 #include "Adafruit_MPU6050.h"
 
 typedef struct{

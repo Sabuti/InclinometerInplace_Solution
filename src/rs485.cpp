@@ -4,8 +4,8 @@ SoftwareSerial mySerial(RX, TX);
 typedef uint8_t byte;
 
 void rs485_init(){
-  pinMode(RE, OUTPUT);
-  digitalWrite(RE, LOW);
+  pinMode(RE, OUTPUT); // Driver Enable Pin para configurar
+  digitalWrite(RE, LOW); // começa low para receber dados
   mySerial.begin(115200);
 }
 
@@ -75,7 +75,7 @@ bool rs485_recvCommand(RS485_CONTROL_PTR rs485Control)
       indexMsg++;
       #ifdef DEBUG
       Serial.print("Recebido RS485: ");
-      //Serial.println(receivedByte, HEX);// Exibe os dados no monitor serial em formato hexadecima
+      //Serial.println(receivedByte, HEX);// Exibe os dados no monitor serial em formato hexadecimal
       #endif
     }
     rs485Control->rs485_size = indexMsg;

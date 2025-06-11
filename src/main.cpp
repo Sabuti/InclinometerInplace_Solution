@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include "main.h"
-#include "master.h"
 
 void setup() {
   //pins_init();

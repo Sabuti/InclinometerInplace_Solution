@@ -9,7 +9,7 @@
 #define RX   PB4
 #define ADO  38
 
-const int8_t dePin = PB5; // DE igual ao do esquematico
+const int8_t RE = PB5; // RE = DE, igual ao do esquematico
 
 void pins_init(void);
 
