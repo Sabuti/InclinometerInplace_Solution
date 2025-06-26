@@ -1,6 +1,5 @@
 #include "rs485.h"
 
-SoftwareSerial mySerial(RX, TX);
 typedef uint8_t byte;
 
 void rs485_init(){

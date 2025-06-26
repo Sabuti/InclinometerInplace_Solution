@@ -4,10 +4,14 @@
 #include "pins.h"
 #include "filters.h"
 #include "app.h"
-#include <SoftwareSerial.h>
 #include <Wire.h>
+#ifdef ESP32
+    HardwareSerial mySerial;
+#else
+    #include <SoftwareSerial.h>
+    SoftwareSerial mySerial(RX, TX);
+#endif
 
-extern SoftwareSerial mySerial;
 
 void rs485_init();
 void rs485_send_data(FILTER_MOVING_AVERAGE_PTR filterAvg);
