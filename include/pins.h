@@ -5,8 +5,8 @@
 
 //#define SCL     37 // deu conflito de nome
 //#define SDA     21 // deu conflito de nome
-#define TX   PB3
-#define RX   PB4
+//#define TX   PB3
+//#define RX   PB4
 #define ADO  38
 
 const int8_t RE = 5; // RE = DE, PB5

@@ -1,11 +1,21 @@
 #include "rs485.h"
 
+#ifdef ESP32
+  HardwareSerial mySerial(2);
+#else 
+  SoftwareSerial mySerial(PB3, PB4);
+#endif
+
 typedef uint8_t byte;
 
 void rs485_init(){
   pinMode(RE, OUTPUT); // Driver Enable Pin para configurar
   digitalWrite(RE, LOW); // começa low para receber dados
-  mySerial.begin(115200);
+  #ifdef ESP32
+    mySerial.begin(115200, SERIAL_8N1, RX, TX);
+  #else
+    mySerial.begin(115200);
+  #endif
 }
 
 void rs485_send_data(FILTER_MOVING_AVERAGE_PTR filterAvg)

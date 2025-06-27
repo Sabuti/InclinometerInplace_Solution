@@ -6,10 +6,11 @@
 #include "app.h"
 #include <Wire.h>
 #ifdef ESP32
-    HardwareSerial mySerial;
+    #include <HardwareSerial.h>
+    extern HardwareSerial mySerial;
 #else
     #include <SoftwareSerial.h>
-    SoftwareSerial mySerial(RX, TX);
+    extern SoftwareSerial mySerial;
 #endif
 
 
